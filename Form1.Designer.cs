@@ -36,7 +36,8 @@
             // 
             // button1
             // 
-            button1.Location = new Point(50, 55);
+            button1.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point, 136);
+            button1.Location = new Point(41, 9);
             button1.Name = "button1";
             button1.Size = new Size(154, 83);
             button1.TabIndex = 0;
@@ -47,21 +48,23 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(268, 57);
+            label1.Font = new Font("Microsoft JhengHei UI", 20F, FontStyle.Regular, GraphicsUnit.Point, 136);
+            label1.Location = new Point(261, 9);
             label1.Name = "label1";
-            label1.Size = new Size(84, 23);
+            label1.Size = new Size(187, 50);
             label1.TabIndex = 1;
             label1.Text = "APP名稱:";
             // 
             // catchAPP
             // 
-            catchAPP.Interval = 400;
+            catchAPP.Interval = 600;
             catchAPP.Tick += catchAPP_Tick_1;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(11F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             ClientSize = new Size(800, 450);
             Controls.Add(label1);
             Controls.Add(button1);

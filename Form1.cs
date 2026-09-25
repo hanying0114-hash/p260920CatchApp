@@ -14,6 +14,7 @@ namespace p260920CatchApp
         //IntPtr = pointer to an integer (指向整數的指標) 抓桌面身分證進來
         [DllImport("user32.dll")]
         private static extern int GetWindowText(IntPtr hWnd, StringBuilder appName, int size);
+        string NewappName;
         private void button1_Click(object sender, EventArgs e)
         {
             catchAPP.Enabled = true;
@@ -26,7 +27,11 @@ namespace p260920CatchApp
             //appName = 新的字串建構器，容量256
             GetWindowText(hWnd, appName, appName.Capacity); 
             //根據hWnd抓取前景視窗的標題文字，放入appName
-            label1.Text += $"{appName.ToString()}\n";
+            if(NewappName != appName.ToString())    //防止洗版
+            {
+                NewappName = appName.ToString();
+                label1.Text += $"{appName.ToString()}\n";
+            }
         }
     }
 }
